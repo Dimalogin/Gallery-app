@@ -1,0 +1,40 @@
+@import url(./css/reset.css);
+@import url(./css/header.css);
+@import url(./css/gallery-card.css);
+@import url(./css/pagination.css);
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #377dff;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 0px 15px;
+  box-sizing: content-box;
+}
+
+.page {
+  padding: 30px 0px 20px 0px;
+}
+
+.btn-top {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  background-color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  color: #377dff;
+  font-size: 1.4em;
+}

@@ -1,0 +1,38 @@
+.pagination {
+  margin: 40px 0px 50px 0px;
+}
+
+.pagination__body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-btn {
+  padding: 5px 15px;
+  background-color: transparent;
+  border-radius: 5px;
+  background-color: white;
+  color: #377dff;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.btn__prev {
+  margin: 0px 20px 0px 0px;
+}
+
+.btn__next {
+  margin: 0px 0px 0px 20px;
+}
+
+.pagination-page {
+  font-size: 1.4em;
+  font-family: "Roboto Mono", monospace;
+  color: white;
+}
+
+.page__slash {
+  margin: 0px 5px;
+}
