@@ -1,6 +1,6 @@
 # Gallery-app - test project from It-Bootcamp
 
-Gallery-app: [Demo]().
+Gallery-app: [Demo](https://dimalogin.github.io/Gallery-app/gallery).
 
 Implemented:
 
