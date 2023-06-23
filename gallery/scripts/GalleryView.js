@@ -27,6 +27,7 @@ export class GalleryView {
   #select = null;
   #list = null;
   #pageId = 1;
+  #toGetData = true;
 
   constructor() {
     this.#render();
@@ -82,8 +83,10 @@ export class GalleryView {
     const heightClient = document.body.clientHeight;
     const totalHeight = height - heightClient - 400;
 
-    if (document.documentElement.scrollTop > totalHeight) {
+    if (document.documentElement.scrollTop > totalHeight && this.#toGetData) {
       this.#pageId += 1;
+      this.#toGetData = !this.#toGetData;
+      console.log(true);
       if (this.#pageId <= 42) {
         this.#onGetDataByIdForEndlessLoading(this.#pageId);
       } else {
@@ -105,18 +108,22 @@ export class GalleryView {
 
   #onGetDataByIdForEndlessLoading(id) {
     this.#showLoader();
-    this.#model
-      .getDataById(id)
-      .then((data) => {
-        const galleryList = this.#list.querySelector(".gallery-list");
-        const result = data.results;
-        const cards = this.#onListUpdate(result);
-        galleryList.appendChild(cards);
-        this.#hideLoader();
-      })
-      .catch((error) => {
-        alert("Ошибка при загузке данных");
-      });
+
+    setTimeout(() => {
+      this.#model
+        .getDataById(id)
+        .then((data) => {
+          const galleryList = this.#list.querySelector(".gallery-list");
+          const result = data.results;
+          const cards = this.#onListUpdate(result);
+          galleryList.appendChild(cards);
+          this.#hideLoader();
+          this.#toGetData = !this.#toGetData;
+        })
+        .catch((error) => {
+          alert(error);
+        });
+    }, 1000);
   }
 
   /*Pagination*/
